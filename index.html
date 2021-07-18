@@ -160,9 +160,9 @@
 </body>
 <script>
     function handleButtonClick() {
-        console.log('started function');
         const input = document.getElementById('emailInput');
-        const value = input.target.value;
+        const value = input.value;
+        console.log(value);
         localStorage.setItem('email', value);
     }
 </script>
