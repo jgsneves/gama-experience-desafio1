@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 1</title>
+</head>
+<style>
+
+    html {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        background-image: url('./background-black-friday.png');
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+    }
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section {
+        margin-left: 16px;
+    }
+
+    header {
+        height: 250px;
+    }
+
+    aside {
+        margin-left: 70px;
+        margin-top: 50px;
+        border: 2px solid gray;
+        border-radius: 8px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    input {
+        border-radius: 8px;
+        border: 2px solid gray;
+        outline: 0;
+        height: 40px;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    button {
+        border-radius: 8px;
+        border: 0;
+        background-color: #00FFB4;
+        outline: 0;
+        height: 40px;
+        width: 100px;
+        cursor: pointer;
+        font-family: 'Roboto Slab', serif;
+        font-weight: bold;
+        margin-top: 32px;
+    }
+
+    h1, h2, h3 {
+        color: whitesmoke;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    h1 {
+        font-size: 200px;
+        line-height: 200px;
+        margin: 16px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        width: 300px;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    .preNumber {
+        position: relative;
+        top: 146px;
+        font-weight: 300;
+    }
+
+    .offWord {
+        font-size: 70px;
+        margin: 16px;
+        font-weight: 300;
+        position: relative;
+        top: -115px;
+        left: 220px;
+        width: 50px;
+    }
+
+    .porcentage {
+        font-size: 100px;
+        line-height: 100px;
+        font-weight: 300;
+        position: relative;
+        left: 240px;
+        top: -310px;
+        margin: 0px;
+    }
+
+    .discount:hover {
+        color: #00FFB4;
+    }
+
+    .dateParagraph {
+        color: #00FFB4;
+        font-weight: bold;
+    }
+
+    .emailText {
+        width: 225px;
+        margin-bottom: 32px;
+        margin-top: 16px;
+    }
+</style>
+<body>
+    <main>
+        <img src="./logo-black-friday.png" alt="BlackFriday">
+        <section>
+            <header>
+                <h2 class="preNumber">até</h2>
+                <h1 class="discount">30</h1>
+                <h2 class="offWord">off</h2>
+                <h2 class="porcentage">%</h2>
+            </header>
+            <h3>A Manatex preparou uma seleção de produtos especiais para a <u>BLACK FRIDAY.</u></h3>
+            <h3 class="dateParagraph">De 25 a 29 de novembro.</h3>
+            <h3>Aproveite nossas ofertas!</h3>
+        </section>
+        <aside>
+            <img src="./mail.svg" alt="E-mail">
+            <h3 class="emailText">Digite seu melhor e-mail para receber ofertas!</h3>
+            <input type="text" placeholder="e-mail" id="emailInput"/>
+            <button type="button" onclick="handleButtonClick">Enviar</button>
+        </aside>
+    </main>
+</body>
+<script>
+    function handleButtonClick() {
+        const input = document.getElementById('e-mail');
+        const value = input.taget.value;
+        localStorage.setItem('email', value);
+    }
+</script>
+</html>
